@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header
+{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(46,46,46,0.7),rgba(211, 46, 46, 0.7)), url('images/banner.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-around;
+    align-items: center;
+}
+nav img
+{
+    width: 150px;
+}
+
+.nav-links
+{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li
+{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a
+{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.nav-links ul li::after
+{
+    content: "";
+    width: 0%;
+    background: red;
+    height: 2px;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after
+{
+   width: 100%;
+}
+.text-box
+{
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+.text-box h1
+{
+    font-size: 63px;
+}
+.text-box p
+{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+}
+
+.cool-btn
+{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    position: relative;
+}
+.cool-btn:hover
+{
+     border: 1px solid rgb(253, 0, 0);
+     background: red;
+     transition: 0.8s;
+}
+nav .fa 
+{
+    display: none;
+}
+/* ---------------Responsive Design------------------- */
+@media (max-width: 700px) {
+    .text-box height{
+    font-size: 20px;
+    }
+    .nav-links ul li {
+        display: block;
+    }
+    .nav-links
+    {
+        position: fixed;
+        background: red;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+    }
+    .nav-links ul
+    {
+        padding: 30px;
+    }
+    nav .fa
+    {
+        display: block;
+        color: white;
+        margin: 10px;
+        cursor: pointer;
+    }
+}
