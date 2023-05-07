@@ -40,11 +40,33 @@ const nextBtn = document.querySelector('.next-btn');
 const randomBtn = document.querySelector('.random-btn');
 
 
-let currentItem = 3;
+let currentItem = 1;
 window.addEventListener('DOMContentLoaded', function ()
 
-{showPerson(currentItem)
+{ 
+  showPerson(currentItem)
 })
+function UpdateBtnState ()
+{
+  if(currentItem >= reviews.length-1)
+  {
+    
+    nextBtn.disabled = true;
+  }
+  else
+  {
+    nextBtn.disabled = false;
+  }
+  if(currentItem <= 0)
+  {
+    
+    prevBtn.disabled = true;
+  }
+  else
+  {
+    prevBtn.disabled = false;
+  }
+}
 
 function showPerson (person)
 {
@@ -54,24 +76,21 @@ img.src =item.img;
 reviewAuthor.textContent =item.name;
 job.textContent= item.job;
 comment.textContent= item.text;
+UpdateBtnState();
+
+
 }
 
 nextBtn.addEventListener('click', function(){
 currentItem++;
-if(currentItem > reviews.length-1)
-{
-currentItem = 0;
-}
+ 
 showPerson(currentItem);
 }
 )
 
 prevBtn.addEventListener('click', function(){
 currentItem--;
-if(currentItem < 0)
-{
-currentItem = reviews.length-1;
-}
+ 
 showPerson(currentItem);
 })
 
